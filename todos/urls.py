@@ -6,5 +6,9 @@ urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
     path('<int:todo_id>/delete', views.delete, name='delete'),
     path('<int:todo_id>/update', views.update, name='update'),
-    path('add/', views.add, name='add')
+    path('add/', views.add, name='add'),
+
+    path('login/', views.login_user, name='login'),
+    path('register/', views.register_user, name='register'),
+    path('logout/', views.logout_user, name='logout'),
 ]

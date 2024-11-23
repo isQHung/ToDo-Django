@@ -1,0 +1,31 @@
+{% extends 'todos/base.html' %}
+
+{% block title %}
+<title>Todo list</title>
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <h1>Login</h1>
+    <form method="post">
+        {% csrf_token %}
+    <div class="form-group">
+       Username
+    </div>
+    <div class="form-group">
+        {{ form.username }}
+    </div>
+    <div class="form-group">
+        Password
+     </div>
+    <div class="form-group">
+        {{ form.password }}
+    </div>
+    <div class="form-group">
+        <input class="btn btn-outline-success" type="submit" value="Submit">
+    </div>
+    </form>
+    <a href="{% url 'todos:register' %}">Don't have an account? Register</a>
+</div>
+{% endblock %}
