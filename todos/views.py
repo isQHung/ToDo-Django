@@ -21,7 +21,7 @@ class IndexView(generic.ListView):
 @login_required
 def add(request):
     title = request.POST['title']
-    Todo.objects.create(title=title)
+    Todo.objects.create(title=title, user = request.user)
 
     return redirect('todos:index')
 
@@ -42,6 +42,13 @@ def update(request, todo_id):
     todo.isCompleted = isCompleted
 
     todo.save()
+    return redirect('todos:index')
+
+@login_required
+def add_tags(request, todo_id):
+    todo = get_object_or_404(Todo, pk=todo_id)
+    
+
     return redirect('todos:index')
 
 # ======================================================================================

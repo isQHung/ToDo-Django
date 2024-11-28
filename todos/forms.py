@@ -9,3 +9,16 @@ class RegisterForm(UserCreationForm):
     class Meta:
         model = User
         fields = ['username', 'password1', 'password2']
+        # widgets = {
+        #     'username': TextInput(attrs={
+        #         'class': "form-control",
+        #         'style': 'max-width: 300px;',
+        #         'placeholder': 'Name'
+        #     }),
+            
+        #     'password': PasswordInput(attrs={
+        #         'class': "form-control"
+        #     }),
+        # }
+
+            
